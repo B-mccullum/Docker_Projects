@@ -18,4 +18,4 @@ sudo systemctl start docker
 sudo systemctl enable docker
 
 # Run this command to create NGINX web server in the background 
-docker container run --publish 80:80 --detach nginx
+sudo docker container run --publish 80:80 --detach nginx
