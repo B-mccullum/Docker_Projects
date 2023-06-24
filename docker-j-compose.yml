@@ -1,0 +1,16 @@
+version: '3'  # Specifies the Docker Compose file format version.
+
+services:  # Starts the services section for defining containers.
+  jenkins:  # Defines a service named "jenkins".
+    image: jenkins/jenkins:lts  # Specifies the Docker image to use for the "jenkins" service.
+
+    ports:  # Maps ports between the container and the host machine.
+      - 8081:8080  # Maps port 8081 of the host to port 8080 of the container.
+      - 50000:50000  # Maps port 50000 of the host to port 50000 of the container.
+
+    volumes:  # Mounts volumes to the container.
+      - jenkins_data:/var/jenkins_home  # Mounts the "jenkins_data" volume to the "/var/jenkins_home" directory inside the container.
+
+volumes:  # Defines named volumes to be used by services.
+  jenkins_data:  # Defines a named volume called "jenkins_data".
+    # No configuration specified for the volume, so it will be created with default settings.
